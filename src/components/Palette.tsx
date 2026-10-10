@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { SECS } from '../data/handbook'
 import list from '../data/projects.json'
 type R = { label: string; sub: string; to: string }
-const PAGES: R[] = [['home', 'Home'], ['today', 'Today'], ['checklist', 'Checklist'], ['timeline', 'Timeline'], ['handbook', 'Handbook'], ['library', 'Academic library'], ['export', 'Export & recovery'], ['health', 'System health'], ['projects', 'Project library'], ['tasks', 'Tasks'], ['decisions', 'Decisions'], ['blockers', 'Blockers'], ['settings', 'Settings']].map(([p, l]) => ({ label: l, sub: 'Page', to: '/' + p }))
+const PAGES: R[] = [['modules', 'My modules'], ['home', 'Home'], ['today', 'Today'], ['checklist', 'Checklist'], ['timeline', 'Timeline'], ['handbook', 'Handbook'], ['library', 'Academic library'], ['export', 'Export & recovery'], ['health', 'System health'], ['projects', 'Project library'], ['tasks', 'Tasks'], ['decisions', 'Decisions'], ['blockers', 'Blockers'], ['settings', 'Settings']].map(([p, l]) => ({ label: l, sub: 'Page', to: '/' + p }))
 export default function Palette({ onClose }: { onClose: () => void }) {
   const [q, setQ] = useState(''); const nav = useNavigate()
   useEffect(() => { const h = (e: KeyboardEvent) => e.key === 'Escape' && onClose(); window.addEventListener('keydown', h); return () => window.removeEventListener('keydown', h) }, [onClose])

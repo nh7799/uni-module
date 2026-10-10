@@ -34,4 +34,8 @@ Row created (`uploading`) → processed → files uploaded → existence/size ve
 
 ### Backups
 Supabase's own database backups are not checked by this app (Dashboard → Database → Backups). Use Export monthly, verify the file on the Export page, and keep it outside the app. Restore: Export → choose archive → validate → Restore (idempotent; existing ids are skipped).
-# uni-module
+
+## v5 — Module manager (start here)
+The app now opens on **Modules**. Press “Add modules”, pick your award (Computer Science, AI, Cyber Security and Networks, Software Engineering, or IT) and level; compulsory modules are ticked. The 55-module catalogue (code, credits, semester, assessment weights) was extracted from the *BSc (Hons) Computer Science and Information Technology* programme specification (Sept 2022) and checked: every award totals 120 credits at levels 4 and 5 and 105 compulsory + 15 chosen at level 6. International College (HIC) and online variants are hidden behind a tick box. Verify against Canvas; the spec can change.
+
+Each module page has status and target mark, assessments (weight, due date, mark) with a live standing (average so far, mark needed on the remainder, final mark and pass at 40%), “Add components from programme spec”, quick-add lectures/notes/resources/revision cards, file attachments, related records, and archive. Everything is stored in the existing `records` table, so attachments, search, export and Health work for modules too. The Mission Control pages (final-year project) are still available but secondary. No new migration is needed.
